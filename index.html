@@ -1,85 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <iframe id="tetra" src="imagens/Tetrahedron.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('tetra')"></iframe>
-    <iframe id="hexa" src="imagens/Hexahedron.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('hexa')"></iframe>
-    <iframe id="octa" src="imagens/Octahedron.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('octa')"></iframe>
-    <iframe id ="dodec" src="imagens/Dodecahedron.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('dodec')"></iframe>
-    <iframe id ="ico" src="imagens/Icosahedron.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('ico')"></iframe>
-</body>
-
-<script>
-    window.addEventListener('load', function () {
-        //despois de carregadas as imagens muda o estilo da img do iframe para que ela ocupe todo ele.
-
-        document.getElementById('tetra').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
-        "width: 100%; height: 100%; background-color: black;";
-
-        document.getElementById('hexa').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
-        "width: 100%; height: 100%; background-color: black;";
-
-        document.getElementById('octa').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
-        "width: 100%; height: 100%; background-color: black;";
-
-        document.getElementById('dodec').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
-        "width: 100%; height: 100%; background-color: black;";
-
-        /*document.getElementById('ico').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
-        "width: 100%; height: 100%; background-color: black;";*/
-    });
-
-
-    let priTetra = true;
-    let priHexa = true;
-    let priOcta = true;
-    let priDodec = true;
-    //let priIco = true;
-    
-    function iframeclick(id) {
-        //console.log(document.getElementById('tetra').contentWindow.document);
-        
-            document.getElementById(id).contentWindow.document.body.onclick = function () {//acessa o document do iframe
-                if (priTetra && id == "tetra") {
-                    document.getElementById(id).src = "index_tetraedro.html";
-                    
-                    priTetra = false;
-                }
-                else if(priHexa && id == "hexa"){
-                    document.getElementById(id).src = "index_hexaedro.html";
-                    
-                    priHexa = false;
-                }
-
-                else if(priOcta && id == "octa"){
-                    document.getElementById(id).src = "index_octaedro.html";
-                    
-                    priOcta = false;
-                }
-
-                else if(priDodec && id == "dodec"){
-                    document.getElementById(id).src = "index_dodecaedro.html";
-                    
-                    priDodec = false;
-                }
-
-                /*else if(priOcta && id == "ico"){
-                    document.getElementById(id).src = "index_icosaedro.html";
-                    
-                    priOcta = false;
-                }*/
-
-
-                
-            
-        }
-    }    
-      
-
-</script>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe id="tetra" src="imagens/test_tetra.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('tetra')"></iframe>
+    <br>
+    <iframe id="hexa" src="imagens/test_hexa.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('hexa')"></iframe>
+    <br>
+    <iframe id="octa" src="imagens/test_octa.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('octa')"></iframe>
+    <br>
+    <iframe id ="dodec" src="imagens/test_dodec.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('dodec')"></iframe>
+    <br>
+    <iframe id ="ico" src="imagens/test_ico.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('ico')"></iframe>
+</body>
+
+<script>
+
+    
+
+    window.addEventListener('load', function () {
+        //despois de carregadas as imagens muda o estilo da img do iframe para que ela ocupe todo ele.
+
+        document.getElementById('tetra').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
+        "width: 100%; height: 100%; background-color: black;";
+
+        document.getElementById('hexa').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
+        "width: 100%; height: 100%; background-color: black;";
+
+        document.getElementById('octa').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
+        "width: 100%; height: 100%; background-color: black;";
+
+        document.getElementById('dodec').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
+        "width: 100%; height: 100%; background-color: black;";
+
+        document.getElementById('ico').contentWindow.document.getElementsByTagName("img")[0].style.cssText = 
+        "width: 100%; height: 100%; background-color: black;";
+        
+    });
+
+
+    let priTetra = true;
+    let priHexa = true;
+    let priOcta = true;
+    let priDodec = true;
+    let priIco = true;
+    
+    function iframeclick(id) {
+        //console.log(document.getElementById('tetra').contentWindow.document);
+        
+            document.getElementById(id).contentWindow.document.body.onclick = function () {//acessa o document do iframe
+                if (priTetra && id == "tetra") {
+                    document.getElementById(id).src = "index_tetraedro.html";
+                    
+                    priTetra = false;
+                }
+                else if(priHexa && id == "hexa"){
+                    document.getElementById(id).src = "index_hexaedro.html";
+                    
+                    priHexa = false;
+                }
+
+                else if(priOcta && id == "octa"){
+                    document.getElementById(id).src = "index_octaedro.html";
+                    
+                    priOcta = false;
+                }
+
+                else if(priDodec && id == "dodec"){
+                    document.getElementById(id).src = "index_dodecaedro.html";
+                    
+                    priDodec = false;
+
+                    
+                }
+
+                else if(priIco && id == "ico"){
+                    document.getElementById(id).src = "index_icosaedro.html";
+                    
+                    priIco = false;
+                }
+
+
+                
+            
+        }
+    }    
+      
+
+</script>
+
 </html>

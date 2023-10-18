@@ -2,7 +2,7 @@ p5.disableFriendlyErrors = true;
 
 var x;
 var y;
-var z = 100;
+var z = 200;
 
 var ang = 0;
 var indexAng = 0;
@@ -35,8 +35,8 @@ var guiAng = {
 }
 
 var fecharSolido = { fecharSolido:function(){
-    gui.__controllers[0].setValue(90);
-    document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value=90;
+    gui.__controllers[0].setValue(138.5);
+    document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value=138.19;
 }}
 
 var resetCam = { resetCam:function(){
@@ -77,7 +77,8 @@ function setup() {
     cam = createCamera();
     angleMode(DEGREES);
 
-    hexa = new Hexaedro();
+    ico = new Icosaedro();
+
 
     gui = new dat.GUI();
 
@@ -87,20 +88,28 @@ function setup() {
             indexAng = Math.floor(180 + guiAng.angulo);
         }
 
-        if (guiAng.angulo > 90 && guiAng.angulo < 91) {
-            document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 90;
+        if (guiAng.angulo > 138 && guiAng.angulo < 139) {
+            document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 138.19;
 
-            //indexAng = 361;
+            indexAng = 361;
         }
         else if (guiAng.angulo > 179 && guiAng.angulo < 181) {
             indexAng = 0;
+            //ang = indexAng;
+        }
+        else if (guiAng.angulo > 221 && guiAng.angulo < 222) {
+            document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 243.435;
+        }
+
+
+        if (indexAng == 360) {
+            ang = 41.5;
+        }
+        else if (indexAng == 361) {
+            ang = 318.5;
+        } else {
             ang = indexAng;
         }
-        else if (guiAng.angulo > 270 && guiAng.angulo < 271) {
-            document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 270;
-        }
-
-
     });
 
     gui.add(fecharSolido,'fecharSolido').name("Fechar Sólido");
@@ -163,10 +172,8 @@ function setup() {
     exibicaoFolder.add(faces, 'faces').name("Faces");
     exibicaoFolder.add(eixos, 'eixos').name("Eixos");
 
-    gui.__controllers[0].setValue(90);
-    document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value=90;
-
-    //ang = indexAng;
+    gui.__controllers[0].setValue(138.5);
+    document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 138.19;
 }
 
 
@@ -174,25 +181,21 @@ var angVisi;
 function draw() {
     background(0);
 
-    //caso especial do cubo
-    ang = indexAng;
-
     //quando angulo da ui muda o ang de controle interno tem que mudar de forma adequada
     if (guiAng.angulo < 180) {
         indexAng = Math.floor(180 + guiAng.angulo);
     }
 
-    if (guiAng.angulo > 90 && guiAng.angulo < 91) {
-        document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 90;
+    if (guiAng.angulo > 138 && guiAng.angulo < 139) {
+        document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 138.19;
 
-        //indexAng = 361;
+        indexAng = 361;
     }
     else if (guiAng.angulo > 179 && guiAng.angulo < 181) {
         indexAng = 0;
-       
     }
-    else if (guiAng.angulo > 270 && guiAng.angulo < 271) {
-        document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 270;
+    else if (guiAng.angulo > 221 && guiAng.angulo < 222) {
+        document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 221.81;
     }
 
     //controles do teclado
@@ -232,7 +235,7 @@ function draw() {
         translate(-(deslocamentoXYZ[indexAng][0]*100), -(deslocamentoXYZ[indexAng][1]*100), -(deslocamentoXYZ[indexAng][2]*100));
     }
 
-    hexa.desenhar(indexAng, 100, faces.faces);
+    ico.desenhar(indexAng, 100, faces.faces);
     pop();
 
     //console.log("ang: " + ang + " index: " + indexAng + " gui: " + guiAng.angulo);
@@ -340,25 +343,35 @@ function controles() {
 
 
     if (pPres) {
-        //180° - 90° = 90
-        //180° + 90° = 270
+        //180° - 138.19° = 41.81
+        //180° + 138.19° = 318.19
+
 
         if (!ang0 && !angDie) {
-            ang--;
-            indexAng = ang;
+            if (ang == 319 || ang == 318.5 || ang == 42 || ang == 41.5) {
+                ang = ang - 0.5;
+                indexAng = ang;
+            } else {
+                ang--;
+                indexAng = ang;
+            }
         }
 
 
-        if (ang == 180 + 90) {
+        if(ang == 318.5) {
+            indexAng = 361;
             angDie = true;
         }
+        else if (ang == 41.5) {
+            indexAng = 360;
+        }
 
-        if (ang == 0) {
+        if(ang == 0) {
             ang0 = true;
         }
 
 
-        if (ang < 0) {
+        if(ang < 0) {
             ang = 359;
             indexAng = 359;
         }
@@ -371,18 +384,27 @@ function controles() {
             guiAng.angulo = ang + 180;
         }else{
             guiAng.angulo = ang - 180;
+
         }
         gui.updateDisplay();
 
     }
 
     if (oPres) {
+        //180° - 116.565° = 63.435
+        //180° + 116.565° = 296.565
 
+        //180° - 138.19° = 41.81
+        //180° + 138.19° = 318.19
         if (!ang0 && !angDie) {
-            ang++;
-            indexAng = ang;
+            if (ang == 41 || ang == 41.5 || ang ==  318 || ang == 318.5) {
+                ang = ang + 0.5;
+                indexAng = ang;
+            } else {
+                ang++;
+                indexAng = ang;
+            }
         }
-
 
 
         if (ang > 359) {
@@ -391,24 +413,31 @@ function controles() {
         }
 
 
-        if (ang == 90) {
+        if (ang == 41.5) {
+            indexAng = 360;
             angDie = true;
+        }
+        else if (ang == 318.5) {
+            indexAng = 361;
         }
 
 
         if (ang == 0) {
             ang0 = true;
         }
+
+        
        
         //quando o ang de controle interno muda o angulo da ui deve mudar adequadamente
         if (ang == 0) {
             guiAng.angulo = 180;
         }
         else if(ang < 180){
-            guiAng.angulo = ang + 180;
+            guiAng.angulo = ang+180;
         }else{
             guiAng.angulo = ang - 180;
         }
+        
         gui.updateDisplay();
     }
    

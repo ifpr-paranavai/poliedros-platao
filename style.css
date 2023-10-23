@@ -1,0 +1,30 @@
+.frames{
+    margin-right: 1em;
+    margin-bottom: 1em;
+    float: left
+}
+
+.bloco{
+    clear: both;
+}
+
+h1 {
+    display: inline-block;
+    margin: 0.25em;
+    
+}
+
+.bt_max{
+    font-size: 2em;
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.bt_max:hover{ 
+    cursor: pointer;
+    background: rgb(206, 199, 199);
+}

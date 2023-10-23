@@ -71,8 +71,16 @@ var eixos = {
     eixos : false
 }
 
+var alturaDispo = window.screen.availHeight;
+
 function setup() {
-    createCanvas(500, 500, WEBGL);
+    //cria o canvas com o masmo tamanh do iframe
+    createCanvas(alturaDispo - (alturaDispo*0.15), alturaDispo - (alturaDispo*0.15), WEBGL);
+
+    //verifica se esta fora do iframe (tela cheia), e ajusta o tamanho de acordo
+    if(window.frameElement == null){
+        resizeCanvas(window.innerWidth, window.innerHeight - (window.innerHeight*0.006));
+    }
 
     cam = createCamera();
     angleMode(DEGREES);
@@ -442,3 +450,35 @@ document.onpointerlockchange = (event) => {
     locked = true;
     requestPointerLock();
  };
+
+var camPosiX = 0;
+var camPosiY = 0;
+var camPosiZ = 0;
+
+var camCentX = 0;
+var camCentY = 0;
+var camCentZ = 0;
+
+var camUpX = 0;
+var camUpY = 0;
+var camUpZ = 0;
+
+
+function windowResized() {
+    camPosiX = cam.eyeX;
+    camPosiY = cam.eyeY;
+    camPosiZ = cam.eyeZ;
+
+    camCentX = cam.centerX;
+    camCentY = cam.centerX;
+    camCentZ = cam.centerX;
+
+    camUpX = cam.upX;
+    camUpY = cam.upY;
+    camUpZ = cam.upZ;
+
+
+    resizeCanvas(window.innerWidth, window.innerHeight - (window.innerHeight * 0.006), false);
+
+    cam.camera(camPosiX, camPosiY, camPosiZ, camCentX, camCentY, camCentZ, camUpX, camUpY, camUpZ);
+}

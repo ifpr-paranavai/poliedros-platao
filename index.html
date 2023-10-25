@@ -1,146 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="bibliotecas/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Poliedros de Platão</title>
+    </head>
 
-<script>
+    <script>
     var alturaDispo = window.screen.availHeight;
     //console.log(alturaDispo);
 </script>
 
-<body>
-    <div class="bloco">
-        <iframe id="tetra" src="imagens/test_tetra.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('tetra')"
-        class="frames"></iframe>
-        
-        <h1>Tetraedro</h1> 
-        <button type="button" class="bt_max" onclick="window.open('index_tetraedro.html')"
-        >⛶<sup style="font-size:0.4em; color: rgb(102, 97, 97);">&nbsp;tela cheia</sup></button> 
+    <body>
+        <div class="container">
+            <div class="row wrap border-bottom pb-4 mb-4">
+                <div
+                    class="col-12 col-sm-12 col-md-7 text-center p-0">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe id="tetra" class="embed-responsive-item"
+                            src="imagens/test_tetra.png" frameborder="0"
+                            scrolling="no"
+                            onload="iframeclick('tetra')"></iframe>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5">
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="m-0">Tetraedro</h1>
+                        </div>
+                        <div>
+                            <button type="button"
+                                onclick="window.open('index_tetraedro.html')"
+                                class="btn btn-outline-dark py-0 fs-4"
+                                title="Ver em Tela Cheia">⛶
+                                Tela Cheia</button>
+                        </div>
+                    </div>
 
-       
-        <p>
-         Na geometria, um tetraedro, também conhecido como uma pirâmide triangular, é um poliedro composto por quatro faces
-        triangulares, três delas encontrando-se em cada vértice. O tetraedro regular é um sólido platónico, figura geométrica
-        espacial formada por quatro triângulos equiláteros (triângulos que possuem lados com medidas iguais); possui 4 vértices
-        , 4 faces e 6 arestas.
-        <br><br>
-        O tetraedro é a manifestação tridimensional do conceito simples de Euclides e, portanto, também pode ser chamado de
-        3-simples. Pode ser definido, também, como um tipo de pirâmide com uma base de polígono plana e faces triangulares que
-        conectam a base a uma ponto comum. No caso de um tetraedro, a base é um triângulo (qualquer uma das quatro faces pode
-        ser considerada base), então um tetraedro também é conhecido como uma "pirâmide triangular".
-        <br><br>
-        Como todos os poliedros convexos, um tetraedro pode ser dobrado a partir de uma única folha de papel.
-        <br><br>
-        Para qualquer tetraedro existe uma esfera circunscrita em que se encontram os quatro vértices e outra esfera inscrita
-        tangente às faces do tetraedro.
-        </p>
-    </div>
-    
-    <div class="bloco">
-        <iframe id="hexa" src="imagens/test_hexa.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('hexa')"
-        class="frames"></iframe>
-        
-        <h1>Hexaedro</h1>
-        <button type="button" class="bt_max" onclick="window.open('index_hexaedro.html')"
-        >⛶<sup style="font-size:0.4em; color: rgb(102, 97, 97);">&nbsp;tela cheia</sup></button> 
+                    <p style="text-align: justify">Na geometria, um tetraedro,
+                        também
+                        conhecido como uma
+                        pirâmide triangular, é um poliedro composto por quatro
+                        faces triangulares, três delas encontrando-se em cada
+                        vértice. O tetraedro regular é um sólido platónico,
+                        figura geométrica espacial formada por quatro triângulos
+                        equiláteros
+                        (triângulos que possuem lados com medidas iguais);
+                        possui 4 vértices, 4 faces e 6 arestas. </p>
+                    <p style="text-align: justify">
+                        O tetraedro é a manifestação tridimensional do conceito
+                        simples
+                        de Euclides e, portanto, também pode ser chamado de
+                        3-simples. Pode ser definido, também, como um tipo de
+                        pirâmide
+                        com uma base de polígono plana e faces triangulares que
+                        conectam a base a uma ponto comum. No caso de um
+                        tetraedro, a
+                        base é um triângulo (qualquer uma das quatro faces pode
+                        ser considerada base), então um tetraedro também é
+                        conhecido
+                        como uma "pirâmide triangular".
+                    </p><p style="text-align: justify">
+                        Como todos os poliedros convexos, um tetraedro pode ser
+                        dobrado
+                        a partir de uma única folha de papel.
+                    </p><p style="text-align: justify">
+                        Para qualquer tetraedro existe uma esfera circunscrita
+                        em que se
+                        encontram os quatro vértices e outra esfera inscrita
+                        tangente às faces do tetraedro.
+                    </p>
+                </div>
+            </div>
+            <div class="row wrap border-bottom pb-4 mb-4">
+                <div
+                    class="col-12 col-sm-12 col-md-7 text-center p-0">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe id="hexa" class="embed-responsive-item"
+                            src="imagens/test_hexa.png" frameborder="0"
+                            scrolling="no"
+                            onload="iframeclick('hexa')"></iframe>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5">
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="m-0">Hexaedro</h1>
+                        </div>
+                        <div>
+                            <button type="button"
+                                onclick="window.open('index_hexaedro.html')"
+                                class="btn btn-outline-dark py-0 fs-4"
+                                title="Ver em Tela Cheia">⛶
+                                Tela Cheia</button>
+                        </div>
+                    </div>
 
-        <p>Um hexaedro regular ou cubo é um poliedro com 6 faces, 12 arestas e 8 vértices. Além disso, é um dos cinco sólidos platônicos, pois:
-        <br>
-        * Cada face tem 4 arestas;
-        <br>
-        * De cada vértice partem 3 arestas;
-        <br>
-        * Vale a relação de Euler: V-A+F=2, onde V representa o número de vértices, A o número de arestas e F o número de faces.
-        <br><br>
-        O cubo é também um poliedro regular, pois além das características de sólido platônico, possui:
-        <br>
-        * Faces poligonais regulares e congruentes;
-        <br>
-        * Ângulos poliédricos congruentes.
-        <br><br>
-        Ainda, é um prisma quadrangular regular, pois possui duas bases paralelas e congruentes (já que é um poliedro regular),
-        suas bases são polígonos regulares (quadrados) e as arestas laterais formam ângulos retos (90°) com as arestas das
-        bases. No cubo, todos os diedros possuem ângulo reto.
-        <br><br>
-        O cubo é também um sólido sociável, já que ele pode ser aglomerado perfeitamente, o que significa que é possível juntar
-        vários cubos sem que sobrem espaços vazios.
-        </p>
-    </div>
-    
-    
-    <div class="bloco">
-        <iframe id="octa" src="imagens/test_octa.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('octa')"
-        class="frames"></iframe>
+                    <p style="text-align: justify">Um hexaedro regular ou cubo é
+                        um poliedro com 6 faces, 12 arestas
+                        e 8 vértices. Além disso, é um dos cinco sólidos
+                        platônicos,
+                        pois:
+                        * Cada face tem 4 arestas;
+                        <br>
+                        * De cada vértice partem 3 arestas;
+                        <br>
+                        * Vale a relação de Euler: V-A+F=2, onde V representa o
+                        número
+                        de vértices, A o número de arestas e F o número de
+                        faces.
+                        <br><br>
+                        O cubo é também um poliedro regular, pois além das
+                        características de sólido platônico, possui:
+                        <br>
+                        * Faces poligonais regulares e congruentes;
+                        <br>
+                        * Ângulos poliédricos congruentes.
+                        <br><br>
+                        Ainda, é um prisma quadrangular regular, pois possui
+                        duas bases
+                        paralelas e congruentes (já que é um poliedro regular),
+                        suas bases são polígonos regulares (quadrados) e as
+                        arestas
+                        laterais formam ângulos retos (90°) com as arestas das
+                        bases. No cubo, todos os diedros possuem ângulo reto.
+                        <br><br>
+                        O cubo é também um sólido sociável, já que ele pode ser
+                        aglomerado perfeitamente, o que significa que é possível
+                        juntar
+                        vários cubos sem que sobrem espaços vazios.
+                    </p>
+                </div>
+            </div>
+            <div class="row wrap border-bottom pb-4 mb-4">
+                <div
+                    class="col-12 col-sm-12 col-md-7 text-center p-0">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe id="octa" class="embed-responsive-item"
+                            src="imagens/test_octa.png" frameborder="0"
+                            scrolling="no"
+                            onload="iframeclick('octa')"></iframe>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5">
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="m-0">Octaedro</h1>
+                        </div>
+                        <div>
+                            <button type="button"
+                                onclick="window.open('index_octaedro.html')"
+                                class="btn btn-outline-dark py-0 fs-4"
+                                title="Ver em Tela Cheia">⛶
+                                Tela Cheia</button>
+                        </div>
+                    </div>
 
-        <h1>Octaedro</h1>
-        <button type="button" class="bt_max" onclick="window.open('index_octaedro.html')"
-        >⛶<sup style="font-size:0.4em; color: rgb(102, 97, 97);">&nbsp;tela cheia</sup></button> 
+                    <p style="text-align: justify">O octaedro é um poliedro de 8
+                        faces.
+                        <br><br>
+                        Tem 6 vértices e 12 arestas.
+                        <br><br>
+                        Pode também ser chamado bipirâmide quadrada.
+                        <br><br>
+                        O octaedro regular é um dos cinco sólidos platónicos.
+                        Ele não é um prisma e nem pirâmide.
+                        <br><br>
+                        A razão pelo qual ele se chama octaedro é que possui 8
+                        faces.
+                    </p>
+                </div>
+            </div>
+            <div class="row wrap border-bottom pb-4 mb-4">
+                <div
+                    class="col-12 col-sm-12 col-md-7 text-center p-0">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe id="dodec" class="embed-responsive-item"
+                            src="imagens/test_dodec.png" frameborder="0"
+                            scrolling="no"
+                            onload="iframeclick('dodec')"></iframe>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5">
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="m-0">Dodecaedro</h1>
+                        </div>
+                        <div>
+                            <button type="button"
+                                onclick="window.open('index_dodecaedro.html')"
+                                class="btn btn-outline-dark py-0 fs-4"
+                                title="Ver em Tela Cheia">⛶
+                                Tela Cheia</button>
+                        </div>
+                    </div>
 
-        <p>O octaedro é um poliedro de 8 faces.
-        <br><br>
-        Tem 6 vértices e 12 arestas.
-        <br><br>
-        Pode também ser chamado bipirâmide quadrada.
-        <br><br>
-        O octaedro regular é um dos cinco sólidos platónicos. Ele não é um prisma e nem pirâmide.
-        <br><br>
-        A razão pelo qual ele se chama octaedro é que possui 8 faces.
-        </p>
-    </div>
-    
-    <div class="bloco">
-        <iframe id="dodec" src="imagens/test_dodec.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('dodec')"
-        class="frames"></iframe>
-        
-        <h1>Dodecaedro</h1>
-        <button type="button" class="bt_max" onclick="window.open('index_dodecaedro.html')"
-        >⛶<sup style="font-size:0.4em; color: rgb(102, 97, 97);">&nbsp;tela cheia</sup></button> 
+                    <p style="text-align: justify">
+                        Um dodecaedro regular é composto por 12 faces
+                        pentagonais
+                        regulares,
+                        três reunidas em cada vértice.
+                        <br><br>
+                        Possui 12 faces, 20 vértices, 30 arestas e 160
+                        diagonais (60 diagonais de face, 100 diagonais de
+                        espaço).
+                        <br><br>
+                        Embora o dodecaedro regular compartilhe muitas
+                        características
+                        com outros sólidos platônicos, uma propriedade única
+                        dele
+                        é que se pode começar em um canto da superfície e
+                        desenhar um
+                        número infinito de linhas retas através da figura que
+                        retornam ao ponto original sem cruzar qualquer outro
+                        canto.
+                    </p>
+                </div>
+            </div>
+            <div class="row wrap">
+                <div
+                    class="col-12 col-sm-12 col-md-7 text-center p-0">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe id="ico" class="embed-responsive-item"
+                            src="imagens/test_ico.png" frameborder="0"
+                            scrolling="no"
+                            onload="iframeclick('ico')"></iframe>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5">
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="m-0">Icosaedro</h1>
+                        </div>
+                        <div>
+                            <button type="button"
+                                onclick="window.open('index_icosaedro.html')"
+                                class="btn btn-outline-dark py-0 fs-4"
+                                title="Ver em Tela Cheia">⛶
+                                Tela Cheia</button>
+                        </div>
+                    </div>
 
-        <p>
-        Um dodecaedro regular é composto por 12 faces pentagonais regulares,
-        três reunidas em cada vértice.
-        <br><br>
-        Possui 12 faces, 20 vértices, 30 arestas e 160
-        diagonais (60 diagonais de face, 100 diagonais de espaço).
-        <br><br>
-        Embora o dodecaedro regular compartilhe muitas características com outros sólidos platônicos, uma propriedade única dele
-        é que se pode começar em um canto da superfície e desenhar um número infinito de linhas retas através da figura que
-        retornam ao ponto original sem cruzar qualquer outro canto.
-        </p>
-    </div>
-    
-    <div class="bloco">
-        <iframe id="ico" src="imagens/test_ico.png" frameborder="0" width="500" height="500" scrolling="no" onload="iframeclick('ico')"
-        class="frames"></iframe>
-        
-        <h1>Icosaedro</h1>
-        <button type="button" class="bt_max" onclick="window.open('index_icosaedro.html')"
-        >⛶<sup style="font-size:0.4em; color: rgb(102, 97, 97);">&nbsp;tela cheia</sup></button> 
+                    <p style="text-align: justify">
+                        Um icosaedro é um poliedro convexo de 20 faces.
+                        O icosaedro também pode ser chamado tetraedro snub, pois
+                        a
+                        snubificação de um tetraedro regular dá um icosaedro
+                        regular.
+                        <br><br>
+                        As 20 faces do icosaedro são triangulares. Ao todo são
+                        20 faces,
+                        30 arestas e 12 vértices. Cada vértice é o encontro de 5
+                        arestas.
+                        <br><br>
+                        Para calcularmos o número de diagonais no icosaedro,
+                        tomemos
+                        qualquer um dos 12 vértices e podemos ligá-lo a 6 outros
+                        vértices (exclui o vértice escolhido e 5 vértices que
+                        são
+                        ligados ao vértice escolhido por uma aresta). Por este
+                        modo,
+                        contamos duas vezes cada diagonal, assim, dividimos por
+                        2 ao
+                        final. Logo, o número de diagonais é 36.
+                        <br><br>
+                        Matematicamente, o número de diagonais D do icosaedro é:
+                        D =
+                        (12*6)/2 = 36
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
 
-        <p>
-        Um icosaedro é um poliedro convexo de 20 faces.
-        O icosaedro também pode ser chamado tetraedro snub, pois a snubificação de um tetraedro regular dá um icosaedro regular.
-        <br><br>
-        As 20 faces do icosaedro são triangulares. Ao todo são 20 faces, 30 arestas e 12 vértices. Cada vértice é o encontro de 5 arestas.
-        <br><br>
-        Para calcularmos o número de diagonais no icosaedro, tomemos qualquer um dos 12 vértices e podemos ligá-lo a 6 outros
-        vértices (exclui o vértice escolhido e 5 vértices que são ligados ao vértice escolhido por uma aresta). Por este modo,
-        contamos duas vezes cada diagonal, assim, dividimos por 2 ao final. Logo, o número de diagonais é 36.
-        <br><br>
-        Matematicamente, o número de diagonais D do icosaedro é: D = (12*6)/2 = 36
-        </p>
-    </div>
-
-
-
-</body>
-
-<script>
+    <script>
     window.addEventListener('load', function () {
         //despois de carregadas as imagens muda o estilo da img do iframe para que ela ocupe todo ele.
 
@@ -225,5 +367,6 @@
         }
     }    
 </script>
+    <script src="bibliotecas/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
 
 </html>

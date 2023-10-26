@@ -12,6 +12,9 @@
 
     <script>
     var alturaDispo = window.screen.availHeight;
+
+    const height = Math.max(document.documentElement.clientHeight ,window.innerHeight || 0)
+    console.log(height);
     //console.log(alturaDispo);
 </script>
 
@@ -20,9 +23,9 @@
             <div class="row wrap border-bottom pb-4 mb-4">
                 <div
                     class="col-12 col-sm-12 col-md-7 text-center p-0">
-                    <div class="embed-responsive embed-responsive-1by1">
-                        <iframe id="tetra" class="embed-responsive-item"
-                            src="imagens/test_tetra.png" frameborder="0"
+                    <div class="ratio ratio-1x1">
+                        <iframe id="tetra"
+                            src="imagens/test_tetra.png"
                             scrolling="no"
                             onload="iframeclick('tetra')"></iframe>
                     </div>
@@ -80,7 +83,7 @@
             <div class="row wrap border-bottom pb-4 mb-4">
                 <div
                     class="col-12 col-sm-12 col-md-7 text-center p-0">
-                    <div class="embed-responsive embed-responsive-1by1">
+                    <div class="ratio ratio-1x1">
                         <iframe id="hexa" class="embed-responsive-item"
                             src="imagens/test_hexa.png" frameborder="0"
                             scrolling="no"
@@ -141,7 +144,7 @@
             <div class="row wrap border-bottom pb-4 mb-4">
                 <div
                     class="col-12 col-sm-12 col-md-7 text-center p-0">
-                    <div class="embed-responsive embed-responsive-1by1">
+                    <div class="ratio ratio-1x1">
                         <iframe id="octa" class="embed-responsive-item"
                             src="imagens/test_octa.png" frameborder="0"
                             scrolling="no"
@@ -181,7 +184,7 @@
             <div class="row wrap border-bottom pb-4 mb-4">
                 <div
                     class="col-12 col-sm-12 col-md-7 text-center p-0">
-                    <div class="embed-responsive embed-responsive-1by1">
+                    <div class="ratio ratio-1x1">
                         <iframe id="dodec" class="embed-responsive-item"
                             src="imagens/test_dodec.png" frameborder="0"
                             scrolling="no"
@@ -228,7 +231,7 @@
             <div class="row wrap">
                 <div
                     class="col-12 col-sm-12 col-md-7 text-center p-0">
-                    <div class="embed-responsive embed-responsive-1by1">
+                    <div class="ratio ratio-1x1">
                         <iframe id="ico" class="embed-responsive-item"
                             src="imagens/test_ico.png" frameborder="0"
                             scrolling="no"
@@ -304,8 +307,8 @@
         
 
        
-        document.getElementById('tetra').height = alturaDispo - (alturaDispo*0.15);
-        document.getElementById('tetra').width = alturaDispo - (alturaDispo*0.15);
+        //document.getElementById('tetra').height = 715;
+       //document.getElementById('tetra').width = 715;
 
         document.getElementById('hexa').height = alturaDispo - (alturaDispo*0.15);
         document.getElementById('hexa').width = alturaDispo - (alturaDispo*0.15);
@@ -368,5 +371,4 @@
     }    
 </script>
     <script src="bibliotecas/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
-
 </html>

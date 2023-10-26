@@ -71,17 +71,10 @@ var eixos = {
     eixos : false
 }
 
-var alturaDispo = window.screen.availHeight;
 
 function setup() {
-    //cria o canvas com o masmo tamanh do iframe
-    createCanvas(alturaDispo - (alturaDispo*0.15), alturaDispo - (alturaDispo*0.15), WEBGL);
-
-    //verifica se esta fora do iframe (tela cheia), e ajusta o tamanho de acordo
-    if(window.frameElement == null){
-        resizeCanvas(window.innerWidth, window.innerHeight - (window.innerHeight*0.006));
-    }
-
+    //cria o canvas com o "masmo" tamanho do iframe
+    createCanvas(window.innerWidth, window.innerHeight - (window.innerHeight*0.006), WEBGL);
 
     cam = createCamera();
     angleMode(DEGREES);

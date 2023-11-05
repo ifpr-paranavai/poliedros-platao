@@ -12,8 +12,9 @@ $(document).ready(function () {
 
             //retorna qual botão de submit foi uzado
             botao: event.originalEvent.submitter.name,
-
         };
+
+        //console.log(event.originalEvent.submitter.name);
 
         $.ajax({
             type: "POST",
@@ -42,40 +43,88 @@ $(document).ready(function () {
             $("#" + data.forma + "Form #somaAngs-group > #somaAngs-erVaz").remove();
 
             //altera os estados do form que fez o submit
-            if (data.errors) {
-                if (data.errors.nFaces) {
-                    $("#" + data.forma + "Form #nFaces").addClass("is-invalid");
-                    $("#" + data.forma + "Form #nFaces-group").append('<div class="invalid-feedback" id="nFaces-erVaz">' + data.errors.nFaces + "</div>");
+            if (data.botao == "enviar") {
+                console.log("enviar");
+                if (data.errors) {
+                    if (data.errors.nFaces) {
+                        $("#" + data.forma + "Form #nFaces").addClass("is-invalid");
+                        $("#" + data.forma + "Form #nFaces-group").append('<div class="invalid-feedback" id="nFaces-erVaz">' + data.errors.nFaces + "</div>");
+                    } else {
+                        $("#" + data.forma + "Form #nFaces").addClass("is-valid");
+                    }
+
+                    if (data.errors.nArestas) {
+                        $("#" + data.forma + "Form #nArestas").addClass("is-invalid");
+                        $("#" + data.forma + "Form #nArestas-group").append('<div class="invalid-feedback" id="nArestas-erVaz">' + data.errors.nArestas + "</div>");
+                    } else {
+                        $("#" + data.forma + "Form #nArestas").addClass("is-valid");
+                    }
+
+                    if (data.errors.nVertices) {
+                        $("#" + data.forma + "Form #nVertices").addClass("is-invalid");
+                        $("#" + data.forma + "Form #nVertices-group").append('<div class="invalid-feedback" id="nVertices-erVaz">' + data.errors.nVertices + "</div>");
+                    } else {
+                        $("#" + data.forma + "Form #nVertices").addClass("is-valid");
+                    }
+
+                    if (data.errors.somaAngs) {
+                        $("#" + data.forma + "Form #somaAngs").addClass("is-invalid");
+                        $("#" + data.forma + "Form #somaAngs-group").append('<div class="invalid-feedback" id="somaAngs-erVaz">' + data.errors.somaAngs + "</div>");
+                    } else {
+                        $("#" + data.forma + "Form #somaAngs").addClass("is-valid");
+                    }
                 } else {
                     $("#" + data.forma + "Form #nFaces").addClass("is-valid");
-                }
-
-                if (data.errors.nArestas) {
-                    $("#" + data.forma + "Form #nArestas").addClass("is-invalid");
-                    $("#" + data.forma + "Form #nArestas-group").append('<div class="invalid-feedback" id="nArestas-erVaz">' + data.errors.nArestas + "</div>");
-                } else {
                     $("#" + data.forma + "Form #nArestas").addClass("is-valid");
-                }
-
-                if (data.errors.nVertices) {
-                    $("#" + data.forma + "Form #nVertices").addClass("is-invalid");
-                    $("#" + data.forma + "Form #nVertices-group").append('<div class="invalid-feedback" id="nVertices-erVaz">' + data.errors.nVertices + "</div>");
-                } else {
                     $("#" + data.forma + "Form #nVertices").addClass("is-valid");
-                }
-
-                if (data.errors.somaAngs) {
-                    $("#" + data.forma + "Form #somaAngs").addClass("is-invalid");
-                    $("#" + data.forma + "Form #somaAngs-group").append('<div class="invalid-feedback" id="somaAngs-erVaz">' + data.errors.somaAngs + "</div>");
-                } else {
                     $("#" + data.forma + "Form #somaAngs").addClass("is-valid");
                 }
-            }else{
-                $("#" + data.forma + "Form #nFaces").addClass("is-valid");
-                $("#" + data.forma + "Form #nArestas").addClass("is-valid");
-                $("#" + data.forma + "Form #nVertices").addClass("is-valid");
-                $("#" + data.forma + "Form #somaAngs").addClass("is-valid");
             }
+            else if (data.botao == "corrigir") {
+                console.log("corrigir");
+
+                if (data.errors) {
+                    if (data.errors.nFaces) {
+                        $("#" + data.forma + "Form #nFaces").addClass("is-invalid");
+                        $("#" + data.forma + "Form #nFaces-group").append('<div class="invalid-feedback" id="nFaces-erVaz">' + data.errors.nFaces + "</div>");
+                    }
+
+                    if (data.errors.nArestas) {
+                        $("#" + data.forma + "Form #nArestas").addClass("is-invalid");
+                        $("#" + data.forma + "Form #nArestas-group").append('<div class="invalid-feedback" id="nArestas-erVaz">' + data.errors.nArestas + "</div>");
+                    }
+
+                    if (data.errors.nVertices) {
+                        $("#" + data.forma + "Form #nVertices").addClass("is-invalid");
+                        $("#" + data.forma + "Form #nVertices-group").append('<div class="invalid-feedback" id="nVertices-erVaz">' + data.errors.nVertices + "</div>");
+                    }
+
+                    if (data.errors.somaAngs) {
+                        $("#" + data.forma + "Form #somaAngs").addClass("is-invalid");
+                        $("#" + data.forma + "Form #somaAngs-group").append('<div class="invalid-feedback" id="somaAngs-erVaz">' + data.errors.somaAngs + "</div>");
+                    }
+                } 
+
+                if (data.acertos) {
+                    if (data.acertos.nFaces) {
+                        $("#" + data.forma + "Form #nFaces").addClass("is-valid");
+                    }
+
+                    if (data.acertos.nArestas) {
+                        $("#" + data.forma + "Form #nArestas").addClass("is-valid");
+                    }
+
+                    if (data.acertos.nVertices) {
+                        $("#" + data.forma + "Form #nVertices").addClass("is-valid");
+                    }
+
+                    if (data.acertos.somaAngs) {
+                        $("#" + data.forma + "Form #somaAngs").addClass("is-valid");
+                    }
+                }
+            }
+
+
 
         });
         event.preventDefault();

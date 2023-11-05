@@ -14,8 +14,51 @@
 
 <script>
     var alturaDispo = window.screen.availHeight;
-
     //console.log(alturaDispo);
+
+
+    let priTetra = true;
+    let priHexa = true;
+    let priOcta = true;
+    let priDodec = true;
+    let priIco = true;
+
+    function iframeclick(id) {
+        //console.log(document.getElementById('tetra').contentWindow.document);
+
+        document.getElementById(id).contentWindow.document.body.onclick = function () {//acessa o document do iframe
+            if (priTetra && id == "tetra") {
+                document.getElementById(id).src = "index_tetraedro.html";
+
+                priTetra = false;
+            }
+
+            else if (priHexa && id == "hexa") {
+                document.getElementById(id).src = "index_hexaedro.html";
+
+                priHexa = false;
+            }
+
+            else if (priOcta && id == "octa") {
+                document.getElementById(id).src = "index_octaedro.html";
+
+                priOcta = false;
+            }
+
+            else if (priDodec && id == "dodec") {
+                document.getElementById(id).src = "index_dodecaedro.html";
+
+                priDodec = false;
+            }
+
+            else if (priIco && id == "ico") {
+                document.getElementById(id).src = "index_icosaedro.html";
+
+                priIco = false;
+            }
+
+        }
+    }    
 </script>
 
 <body>
@@ -119,7 +162,8 @@
                     <br>
 
                     <small><b>*Opcional</b></small>
-                    <label for="opni">Gostariamos de saber suas impressões sobre o site (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
+                    <label for="opni">Gostariamos de saber suas impressões sobre o site
+                        (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
                     <textarea id="opni" class="form-control" maxlength="400" name="opni"></textarea>
                     <br><br>
 
@@ -218,7 +262,8 @@
                     <br>
 
                     <small><b>*Opcional</b></small>
-                    <label for="opni">Gostariamos de saber suas impressões sobre o site (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
+                    <label for="opni">Gostariamos de saber suas impressões sobre o site
+                        (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
                     <textarea id="opni" class="form-control" maxlength="400" name="opni"></textarea>
                     <br><br>
 
@@ -317,7 +362,8 @@
                     <br>
 
                     <small><b>*Opcional</b></small>
-                    <label for="opni">Gostariamos de saber suas impressões sobre o site (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
+                    <label for="opni">Gostariamos de saber suas impressões sobre o site
+                        (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
                     <textarea id="opni" class="form-control" maxlength="400" name="opni"></textarea>
                     <br><br>
 
@@ -395,7 +441,8 @@
                     <br>
 
                     <small><b>*Opcional</b></small>
-                    <label for="opni">Gostariamos de saber suas impressões sobre o site (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
+                    <label for="opni">Gostariamos de saber suas impressões sobre o site
+                        (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
                     <textarea id="opni" class="form-control" maxlength="400" name="opni"></textarea>
                     <br><br>
 
@@ -480,7 +527,8 @@
                     <br>
 
                     <small><b>*Opcional</b></small>
-                    <label for="opni">Gostariamos de saber suas impressões sobre o site (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
+                    <label for="opni">Gostariamos de saber suas impressões sobre o site
+                        (salvas&nbsp;de&nbsp;forma&nbsp;anônima): </label>
                     <textarea id="opni" class="form-control" maxlength="400" name="opni"></textarea>
                     <br><br>
 
@@ -573,48 +621,6 @@
     });
 
 
-    let priTetra = true;
-    let priHexa = true;
-    let priOcta = true;
-    let priDodec = true;
-    let priIco = true;
-
-    function iframeclick(id) {
-        //console.log(document.getElementById('tetra').contentWindow.document);
-
-        document.getElementById(id).contentWindow.document.body.onclick = function () {//acessa o document do iframe
-            if (priTetra && id == "tetra") {
-                document.getElementById(id).src = "index_tetraedro.html";
-
-                priTetra = false;
-            }
-
-            else if (priHexa && id == "hexa") {
-                document.getElementById(id).src = "index_hexaedro.html";
-
-                priHexa = false;
-            }
-
-            else if (priOcta && id == "octa") {
-                document.getElementById(id).src = "index_octaedro.html";
-
-                priOcta = false;
-            }
-
-            else if (priDodec && id == "dodec") {
-                document.getElementById(id).src = "index_dodecaedro.html";
-
-                priDodec = false;
-            }
-
-            else if (priIco && id == "ico") {
-                document.getElementById(id).src = "index_icosaedro.html";
-
-                priIco = false;
-            }
-
-        }
-    }    
 </script>
 <script src="bibliotecas/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
 

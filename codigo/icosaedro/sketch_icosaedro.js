@@ -31,51 +31,56 @@ let locked = false;
 
 
 var guiAng = {
-    angulo :    180
+    angulo: 180
 }
 
-var fecharSolido = { fecharSolido:function(){
-    gui.__controllers[0].setValue(138.5);
-    document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value=138.19;
-}}
-
-var resetCam = { resetCam:function(){
-    if (Orbital.orb) {
-        cam = createCamera();
+var fecharSolido = {
+    fecharSolido: function () {
+        gui.__controllers[0].setValue(138.5);
+        document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 138.19;
     }
-}}
+}
+
+var resetCam = {
+    resetCam: function () {
+        if (Orbital.orb) {
+            cam = createCamera();
+        }
+    }
+}
 
 var Orbital = {
-    orb : true
+    orb: true
 }
 var Fps = {
-    fps : false
+    fps: false
 }
 
 var empty = {
-    empty:function(){
-        
-}}
+    empty: function () {
+
+    }
+}
 
 var fixa = {
-    fixa : false
+    fixa: false
 }
 var centralizada = {
-    centralizada : true
+    centralizada: true
 }
 
 var faces = {
-    faces : true
+    faces: true
 }
 var eixos = {
-    eixos : false
+    eixos: false
 }
 
 var alturaDispo = window.screen.availHeight;
 
 function setup() {
     //cria o canvas com o "masmo" tamanho do iframe
-    createCanvas(window.innerWidth, window.innerHeight - (window.innerHeight*0.006), WEBGL);
+    createCanvas(window.innerWidth, window.innerHeight - (window.innerHeight * 0.006), WEBGL);
 
     cam = createCamera();
     angleMode(DEGREES);
@@ -115,8 +120,8 @@ function setup() {
         }
     });
 
-    gui.add(fecharSolido,'fecharSolido').name("Fechar Sólido");
-   
+    gui.add(fecharSolido, 'fecharSolido').name("Fechar Sólido");
+
     opcoesFolder = gui.addFolder('Opções');
 
     cameraFolder = opcoesFolder.addFolder('Câmera');
@@ -130,7 +135,7 @@ function setup() {
 
     });
 
-    cameraFolder.add(Fps, 'fps').name("FPS").onChange(function() {
+    cameraFolder.add(Fps, 'fps').name("FPS").onChange(function () {
         /*
         if ( indexAng ==  360) {
             ang = 63.5;
@@ -142,7 +147,7 @@ function setup() {
         }
         */
 
-        
+
         gui.__folders.Opções.hide();
         gui.__controllers[1].__li.style.display = "none";
 
@@ -155,17 +160,17 @@ function setup() {
         Orbital.orb = false;
         gui.updateDisplay();
 
-        
+
     });
 
 
     exibicaoFolder = opcoesFolder.addFolder('Exibição');
 
-    exibicaoFolder.add(fixa, 'fixa').name("Fixa").onChange(function() {
-        centralizada.centralizada =  !centralizada.centralizada;
+    exibicaoFolder.add(fixa, 'fixa').name("Fixa").onChange(function () {
+        centralizada.centralizada = !centralizada.centralizada;
         gui.updateDisplay();
     });
-    exibicaoFolder.add(centralizada, 'centralizada').name("Centralizada").onChange(function() {
+    exibicaoFolder.add(centralizada, 'centralizada').name("Centralizada").onChange(function () {
         fixa.fixa = !fixa.fixa;
         gui.updateDisplay();
     });
@@ -182,66 +187,69 @@ function setup() {
 
 var angVisi;
 function draw() {
-    background(0);
+    if (parent.document.activeElement.id == "ico" || window.frameElement == null) {
+        //console.log("ico");
+        background(0);
 
-    //quando angulo da ui muda o ang de controle interno tem que mudar de forma adequada
-    if (guiAng.angulo < 180) {
-        indexAng = Math.floor(180 + guiAng.angulo);
-    }
-
-    if (guiAng.angulo > 138 && guiAng.angulo < 139) {
-        document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 138.19;
-
-        indexAng = 361;
-    }
-    else if (guiAng.angulo > 179 && guiAng.angulo < 181) {
-        indexAng = 0;
-    }
-    else if (guiAng.angulo > 221 && guiAng.angulo < 222) {
-        document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 221.81;
-    }
-
-    //controles do teclado
-    controles();
-
-    //caso o cursor esteja travado, primeira pessoa
-    if(locked){
-        // Calculo do angulo entre a linha( da posição da camera até o ponto de visão) e o eixo Z
-        angVisi = atan(abs(1 / ((cam.centerZ - cam.eyeZ) / (cam.centerY - cam.eyeY))));
-
-        cam.pan(-movedX * 0.1);
-
-        //impede que a camera rotacione +-90° no eixo vertical, por causa de problemas de inversão de valores
-        if (angVisi < 85) {
-            cam.tilt(movedY * 0.1);
+        //quando angulo da ui muda o ang de controle interno tem que mudar de forma adequada
+        if (guiAng.angulo < 180) {
+            indexAng = Math.floor(180 + guiAng.angulo);
         }
-    }
-    else if(Orbital.orb){
-        orbitControl(1, 1, 1, {freeRotation: true});
-    }
 
-    //ilustra os eixos x,y,z*(sentido não convencional cartesiano, mas sim o da tela de computador)
-    if (eixos.eixos) {
-        strokeWeight(2);
-        stroke(0, 0, 255);
-        line(0, 0, 0, 1500, 0, 0);
-        stroke(255, 0, 0);
-        line(0, 0, 0, 0, 1500, 0);
-        stroke(0, 255, 0);
-        line(0, 0, 0, 0, 0, 1500);
+        if (guiAng.angulo > 138 && guiAng.angulo < 139) {
+            document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 138.19;
+
+            indexAng = 361;
+        }
+        else if (guiAng.angulo > 179 && guiAng.angulo < 181) {
+            indexAng = 0;
+        }
+        else if (guiAng.angulo > 221 && guiAng.angulo < 222) {
+            document.getElementsByClassName("c")[0].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value = 221.81;
+        }
+
+        //controles do teclado
+        controles();
+
+        //caso o cursor esteja travado, primeira pessoa
+        if (locked) {
+            // Calculo do angulo entre a linha( da posição da camera até o ponto de visão) e o eixo Z
+            angVisi = atan(abs(1 / ((cam.centerZ - cam.eyeZ) / (cam.centerY - cam.eyeY))));
+
+            cam.pan(-movedX * 0.1);
+
+            //impede que a camera rotacione +-90° no eixo vertical, por causa de problemas de inversão de valores
+            if (angVisi < 85) {
+                cam.tilt(movedY * 0.1);
+            }
+        }
+        else if (Orbital.orb) {
+            orbitControl(1, 1, 1, { freeRotation: true });
+        }
+
+        //ilustra os eixos x,y,z*(sentido não convencional cartesiano, mas sim o da tela de computador)
+        if (eixos.eixos) {
+            strokeWeight(2);
+            stroke(0, 0, 255);
+            line(0, 0, 0, 1500, 0, 0);
+            stroke(255, 0, 0);
+            line(0, 0, 0, 0, 1500, 0);
+            stroke(0, 255, 0);
+            line(0, 0, 0, 0, 0, 1500);
+        }
+
+        //separa a movimentação do solido da dos outros elemantos
+        push();
+        //ajusta a posição do solido para que esteja sempre centralizado, caso contrario permanece fixa
+        if (centralizada.centralizada) {
+            translate(-(deslocamentoXYZ[indexAng][0] * 100), -(deslocamentoXYZ[indexAng][1] * 100), -(deslocamentoXYZ[indexAng][2] * 100));
+        }
+
+        ico.desenhar(indexAng, 100, faces.faces);
+        pop();
+
+        //console.log("ang: " + ang + " index: " + indexAng + " gui: " + guiAng.angulo);
     }
-
-    //separa a movimentação do solido da dos outros elemantos
-    push();
-    //ajusta a posição do solido para que esteja sempre centralizado, caso contrario permanece fixa
-    if(centralizada.centralizada){
-        translate(-(deslocamentoXYZ[indexAng][0]*100), -(deslocamentoXYZ[indexAng][1]*100), -(deslocamentoXYZ[indexAng][2]*100));
-    }
-
-    ico.desenhar(indexAng, 100, faces.faces);
-    pop();
-
-    //console.log("ang: " + ang + " index: " + indexAng + " gui: " + guiAng.angulo);
 }
 
 function keyPressed() {
@@ -361,7 +369,7 @@ function controles() {
         }
 
 
-        if(ang == 318.5) {
+        if (ang == 318.5) {
             indexAng = 361;
             angDie = true;
         }
@@ -369,23 +377,23 @@ function controles() {
             indexAng = 360;
         }
 
-        if(ang == 0) {
+        if (ang == 0) {
             ang0 = true;
         }
 
 
-        if(ang < 0) {
+        if (ang < 0) {
             ang = 359;
             indexAng = 359;
         }
-        
+
         //quando o ang de controle interno muda o angulo da ui deve mudar adequadamente
-        if(ang == 0) {
+        if (ang == 0) {
             guiAng.angulo = 180;
         }
-        else if(ang < 180) {
+        else if (ang < 180) {
             guiAng.angulo = ang + 180;
-        }else{
+        } else {
             guiAng.angulo = ang - 180;
 
         }
@@ -400,7 +408,7 @@ function controles() {
         //180° - 138.19° = 41.81
         //180° + 138.19° = 318.19
         if (!ang0 && !angDie) {
-            if (ang == 41 || ang == 41.5 || ang ==  318 || ang == 318.5) {
+            if (ang == 41 || ang == 41.5 || ang == 318 || ang == 318.5) {
                 ang = ang + 0.5;
                 indexAng = ang;
             } else {
@@ -429,28 +437,28 @@ function controles() {
             ang0 = true;
         }
 
-        
-       
+
+
         //quando o ang de controle interno muda o angulo da ui deve mudar adequadamente
         if (ang == 0) {
             guiAng.angulo = 180;
         }
-        else if(ang < 180){
-            guiAng.angulo = ang+180;
-        }else{
+        else if (ang < 180) {
+            guiAng.angulo = ang + 180;
+        } else {
             guiAng.angulo = ang - 180;
         }
-        
+
         gui.updateDisplay();
     }
-   
+
 }
 
 var saindoFps = false;
 var orbit = true;
 
 document.onpointerlockchange = (event) => {
-    if(saindoFps){
+    if (saindoFps) {
         gui.__folders.Opções.show();
         gui.__controllers[1].__li.style.display = "";
 
@@ -462,18 +470,18 @@ document.onpointerlockchange = (event) => {
     saindoFps = !saindoFps;
 
     //limita o intervalo para voltar a trava depois de sair dela (teoricamente, precisa de mais trabalho) 
-    if(document.pointerLockElement == null){
+    if (document.pointerLockElement == null) {
         pointerLockActivatedAt = performance.now();
 
         locked = false;
     }
- };
+};
 
- document.onpointerlockerror = (event) => { 
+document.onpointerlockerror = (event) => {
     //garante que mesmo que de erro o curssor ira travar eventualmente
     locked = true;
     requestPointerLock();
- };
+};
 
 var camPosiX = 0;
 var camPosiY = 0;

@@ -9,6 +9,7 @@
     <script src="form.js"></script>
 
     <link rel="stylesheet" href="bibliotecas/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+     
     <title>Poliedros de Platão</title>
 </head>
 
@@ -126,12 +127,20 @@
             <div class="col-12 col-sm-12 col-md-5">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <div>
-                        <h1 class="m-0">Tetraedro</h1>
+                        <h1 class="m-0">Tetraedro <i class="bi-alarm"></i></i></h1>
                     </div>
+
+                    <div>
+                        <button type="button" class="btn btn-outline-dark py-0 fs-4" data-bs-toggle="modal"
+                            data-bs-target="#tutorialModal">
+                            Controles
+                        </button>
+                    </div>
+
                     <div>
                         <button type="button" onclick="window.open('index_tetraedro.html')"
-                            class="btn btn-outline-dark py-0 fs-4" title="Ver em Tela Cheia">⛶
-                            Tela Cheia</button>
+                            class="btn btn-outline-dark py-0 fs-4" title="Ver em Tela Cheia">
+                            ⛶ Tela Cheia</button>
                     </div>
                 </div>
 
@@ -229,6 +238,14 @@
                     <div>
                         <h1 class="m-0">Hexaedro</h1>
                     </div>
+
+                    <div>
+                        <button type="button" class="btn btn-outline-dark py-0 fs-4" data-bs-toggle="modal"
+                            data-bs-target="#tutorialModal">
+                            Controles
+                        </button>
+                    </div>
+
                     <div>
                         <button type="button" onclick="window.open('index_hexaedro.html')"
                             class="btn btn-outline-dark py-0 fs-4" title="Ver em Tela Cheia">⛶
@@ -329,6 +346,14 @@
                     <div>
                         <h1 class="m-0">Octaedro</h1>
                     </div>
+
+                    <div>
+                        <button type="button" class="btn btn-outline-dark py-0 fs-4" data-bs-toggle="modal"
+                            data-bs-target="#tutorialModal">
+                            Controles
+                        </button>
+                    </div>
+
                     <div>
                         <button type="button" onclick="window.open('index_octaedro.html')"
                             class="btn btn-outline-dark py-0 fs-4" title="Ver em Tela Cheia">⛶
@@ -408,6 +433,14 @@
                     <div>
                         <h1 class="m-0">Dodecaedro</h1>
                     </div>
+
+                    <div>
+                        <button type="button" class="btn btn-outline-dark py-0 fs-4" data-bs-toggle="modal"
+                            data-bs-target="#tutorialModal">
+                            Controles
+                        </button>
+                    </div>
+
                     <div>
                         <button type="button" onclick="window.open('index_dodecaedro.html')"
                             class="btn btn-outline-dark py-0 fs-4" title="Ver em Tela Cheia">⛶
@@ -495,6 +528,14 @@
                     <div>
                         <h1 class="m-0">Icosaedro</h1>
                     </div>
+
+                    <div>
+                        <button type="button" class="btn btn-outline-dark py-0 fs-4" data-bs-toggle="modal"
+                            data-bs-target="#tutorialModal">
+                            Controles
+                        </button>
+                    </div>
+
                     <div>
                         <button type="button" onclick="window.open('index_icosaedro.html')"
                             class="btn btn-outline-dark py-0 fs-4" title="Ver em Tela Cheia">⛶
@@ -599,11 +640,13 @@
                         ,
                     </span>
                     
-                    <a style="text-decoration:none; color:#33ccff" target=”_blank” href="https://github.com/dataarts/dat.gui">dat.GUI</a>,
+                    <a style="text-decoration:none; color:#33ccff" target=”_blank” href="https://github.com/dataarts/dat.gui"> dat.GUI</a>,
 
-                    <a style="text-decoration:none; color:#33ccff" target=”_blank” href="https://getbootstrap.com/">Bootstrap</a>,
+                    <a style="text-decoration:none; color:#33ccff" target=”_blank” href="https://getbootstrap.com/"> Bootstrap</a>,
 
-                    <a style="text-decoration:none; color:#33ccff" target=”_blank” href="https://jquery.com/">jQuery</a>.
+                    <a style="text-decoration:none; color:#33ccff" target=”_blank” href="https://jquery.com/"> jQuery</a>, 
+
+                    <a style="text-decoration:none; color:#33ccff" target=”_blank” href="https://thoseawesomeguys.com/prompts/"> Xelu's FREE Prompts</a>.
 
                     </p>
 
@@ -632,7 +675,101 @@
             </footer>
         </div>
     </div>
-    <!---->
+
+  <!-- Modal -->
+  <div class="modal fade" id="tutorialModal" tabindex="-1" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="tutorialModalLabel">Controles</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <h2><b>Iniciar:</b></h2>
+            <div class="text-center">
+                Clique 
+                <img src="imagens/controles/Mouse_Left_Key_Light.png" style="max-width: 5%; max-height: 5%">
+                na imagem do sólido para iniciar.
+            </div>
+            <img src="imagens/tutorialGIFs/clique para iniciar.gif" class="img-fluid rounded mx-auto d-block">
+
+            <hr>
+
+            <h2><b>Rotacionar:</b></h2>
+            <div class="text-center">
+                Clique e arraste
+                <img src="imagens/controles/Mouse_Left_Key_Light.png" style="max-width: 5%; max-height: 5%">
+                para rotacioanar o sólio.
+            </div>
+            <img src="imagens/tutorialGIFs/arraste para rotacionar.gif" class="img-fluid rounded mx-auto d-block">
+
+            <hr>
+
+            <h2><b>Zoom:</b></h2>
+            <div class="text-center">
+                Rode a
+                <img src="imagens/controles/Mouse_Middle_Key_Light.png" style="max-width: 5%; max-height: 5%">
+                para aproximar e afastar.
+            </div>
+            <img src="imagens/tutorialGIFs/role para zoom.gif" class="img-fluid rounded mx-auto d-block">
+
+            <hr>
+
+            <h2><b>Abrir:</b></h2>
+            <div class="text-center">
+                Segure
+                <img src="imagens/controles/O_Key_Light.png" style="max-width: 5%; max-height: 5%">
+                para "abrir" o sólido.
+            </div>
+            <img src="imagens/tutorialGIFs/o para abrir.gif" class="img-fluid rounded mx-auto d-block">
+
+            <hr>
+
+            <h2><b>Fechar:</b></h2>
+            <div class="text-center">
+                Segure
+                <img src="imagens/controles/P_Key_Light.png" style="max-width: 5%; max-height: 5%">
+                para "fechar" o sólido.
+            </div>
+            <img src="imagens/tutorialGIFs/p para fechar.gif" class="img-fluid rounded mx-auto d-block">
+
+            <hr>
+
+            <h2><b>Faces:</b></h2>
+            <div class="text-center">
+                Precione
+                <img src="imagens/controles/K_Key_Light.png" style="max-width: 5%; max-height: 5%">
+                para ocultar ou mostrar as faces.
+            </div>
+            <img src="imagens/tutorialGIFs/k para faces.gif" class="img-fluid rounded mx-auto d-block">
+
+            <hr>
+
+            <h2><b>Eixos:</b></h2>
+            <div class="text-center">
+                Precione
+                <img src="imagens/controles/L_Key_Light.png" style="max-width: 5%; max-height: 5%">
+                para mostrar ou ocultar os eixos.
+            </div>
+            <img src="imagens/tutorialGIFs/l para eixos.gif" class="img-fluid rounded mx-auto d-block">
+
+            <hr>
+
+            <h3><b>P.S:</b></h3>
+                <p>Existem mais funcionalidades que não foram faladas aqui, talvez algum dia escreva sobre elas, 
+                mas nesse meio tempo gostaria contar com seu sentimento de exploração e descoberta.</p>
+                <p><b>P.P.S: </b>Na duvida aperte <img src="imagens/controles/Esc_Key_Light.png" style="max-width: 5%; max-height: 5%">
+                    e ou reinicie a página.</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 
